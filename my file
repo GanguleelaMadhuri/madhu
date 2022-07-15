@@ -1,0 +1,44 @@
+RUN the free command and display as
+1. Total memory = 
+2. used memory =
+3. Free memory =
+Task 1 : run the free command and display output as
+        Total memory = 
+        used memory
+1.  =
+        Free memory =
+Task 2 : Compare used and free memory and display which one is bigger
+Task 3 : check how much swap memory is available and see if it is more than total memory 
+
+Answer:
+total=$(free -m | grep Mem | cut -c 17-20)
+echo 1.Total memory = $total
+used=$(free -m | grep Mem | cut -c 29-31)
+echo 2.Used memory = $used
+avl=$(free -m | grep Mem | cut -c 76-79)
+echo 3.Free memory = $avl
+
+echo Task 2
+fr=$(free -m | grep Mem | cut -c 41-44)
+#echo $fr
+if [ $used -ge $fr ]
+then
+echo "More  memory has been used"
+else
+echo "There are more free place in memory comparing to used memory"
+fi
+
+echo Task 3
+swap=$(free -m | grep Swap | cut -c 17-20)
+echo Swap memory available = $swap
+if (( $swap > $total ))
+then
+echo Swap memory crossed the total memory.
+else
+echo More total memory
+fi
+
+free -m
+
+
+
