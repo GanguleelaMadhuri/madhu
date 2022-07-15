@@ -1,0 +1,4 @@
+pwd
+free -m
+ls -alrt
+ll
