@@ -1,0 +1,14 @@
+vi "hello.sh"
+!/bin/bash
+#date
+#author
+#purpose
+echo "hello world!.."
+i
+:wq
+cat hello.sh
+ ls -l hello.sh
+    ./hello.sh
+     chmod +x hello.sh
+     ls -l hello.sh
+     ./hello.sh
